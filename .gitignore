@@ -1,1 +1,17 @@
-data
+# Data directory
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+
+# macOS
+.DS_Store
+
+# Logs and translation files
+*.log
+*.pot
+
+outputs
+src/__pycache__/

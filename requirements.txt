@@ -8,3 +8,4 @@ opencv-python
 rich
 tqdm
 albumentations
+wandb

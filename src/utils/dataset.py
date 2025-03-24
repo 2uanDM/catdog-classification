@@ -1,8 +1,8 @@
 import os
 from typing import List, Literal, Tuple
 
-import cv2
 import numpy as np
+from PIL import Image
 from torch.utils.data import Dataset
 
 from .transform import Transform
@@ -112,8 +112,8 @@ class CatDogDataset(Dataset):
         file_path, label = self.files[idx]
 
         # Load image
-        image = cv2.imread(file_path)
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        image = Image.open(file_path).convert("RGB")
+        image = np.array(image)
 
         # Apply transformations
         if self.transform:
